@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        PDF RAG Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app-layout">
+
+
+    <!-- ==================================================
+         SIDEBAR
+         ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                AI
+            </div>
+
+            <div>
+
+                <div class="brand-title">
+                    PDF RAG
+                </div>
+
+                <div class="brand-subtitle">
+                    AI Assistant
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="#dashboard"
+                class="nav-item active"
+            >
+                Dashboard
+            </a>
+
+
+            <a
+                href="#documents"
+                class="nav-item"
+            >
+                Documents
+            </a>
+
+
+            <a
+                href="#chat"
+                class="nav-item"
+            >
+                Chat
+            </a>
+
+
+            <a
+                href="#history"
+                class="nav-item"
+            >
+                History
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-section">
+
+
+            <div class="section-heading">
+
+                <span>
+                    Documents
+                </span>
+
+                <span class="document-count">
+                    {{ pdf_count }}
+                </span>
+
+            </div>
+
+
+            {% if uploaded_pdfs %}
+
+                <div class="sidebar-documents">
+
+
+                    {% for pdf in uploaded_pdfs %}
+
+
+                        <div
+                            class="
+                                sidebar-document
+                                {% if pdf == active_pdf %}
+                                selected
+                                {% endif %}
+                            "
+                        >
+
+
+                            <div class="sidebar-document-info">
+
+                                <div class="document-icon">
+                                    PDF
+                                </div>
+
+
+                                <div class="document-name">
+
+                                    {{ pdf }}
+
+                                </div>
+
+                            </div>
+
+
+                            {% if pdf == active_pdf %}
+
+                                <div class="active-dot"></div>
+
+                            {% endif %}
+
+
+                        </div>
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+            {% else %}
+
+                <div class="empty-sidebar">
+                    No documents
+                </div>
+
+            {% endif %}
+
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="tech-title">
+                Powered by
+            </div>
+
+
+            <div class="tech-items">
+
+                <span>
+                    Flask
+                </span>
+
+                <span>
+                    ChromaDB
+                </span>
+
+                <span>
+                    Groq
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+         ================================================== -->
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+
+            <div>
+
+                <div class="page-title">
+                    Document Assistant
+                </div>
+
+                <div class="page-subtitle">
+                    Ask questions and summarize your PDFs
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                {% if active_pdf %}
+
+                    <div class="active-document">
+
+                        <span class="status-dot"></span>
+
+                        <span class="active-text">
+                            {{ active_pdf }}
+                        </span>
+
+                    </div>
+
+                {% else %}
+
+                    <div class="active-document">
+
+                        <span class="status-dot offline"></span>
+
+                        <span class="active-text">
+                            No PDF selected
+                        </span>
+
+                    </div>
+
+                {% endif %}
+
+
+            </div>
+
+
+        </header>
+
+
+        <div
+            class="content-container"
+            id="dashboard"
+        >
+
+
+            <!-- ==================================================
+                 MESSAGE
+                 ================================================== -->
+
+            {% if message %}
+
+                <div class="alert">
+                    {{ message }}
+                </div>
+
+            {% endif %}
+
+
+            <!-- ==================================================
+                 WELCOME
+                 ================================================== -->
+
+            <section class="welcome-section">
+
+
+                <div>
+
+                    <h1>
+                        Your PDF knowledge base
+                    </h1>
+
+                    <p>
+                        Upload documents, ask questions,
+                        and generate AI-powered summaries.
+                    </p>
+
+                </div>
+
+
+                <div class="stats-card">
+
+                    <div class="stat-number">
+                        {{ pdf_count }}
+                    </div>
+
+                    <div class="stat-label">
+                        Documents
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ==================================================
+                 UPLOAD
+                 ================================================== -->
+
+            <section class="card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Upload a document
+                        </h2>
+
+                        <p>
+                            Add a text PDF or scanned PDF.
+                        </p>
+
+                    </div>
+
+
+                    <div class="upload-badge">
+                        PDF
+                    </div>
+
+                </div>
+
+
+                <form
+                    action="{{ url_for('upload_pdf') }}"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    class="upload-area"
+                >
+
+
+                    <label
+                        for="pdf-file"
+                        class="file-drop-area"
+                    >
+
+                        <div class="upload-icon">
+                            +
+                        </div>
+
+
+                        <div>
+
+                            <div class="upload-title">
+                                Choose a PDF
+                            </div>
+
+                            <div class="upload-description">
+                                Select a document from your computer
+                            </div>
+
+                        </div>
+
+
+                        <input
+                            id="pdf-file"
+                            type="file"
+                            name="pdf"
+                            accept=".pdf,application/pdf"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+
+                        Upload PDF
+
+                    </button>
+
+
+                </form>
+
+
+                <div
+                    id="selected-file"
+                    class="selected-file"
+                ></div>
+
+
+            </section>
+
+
+            <!-- ==================================================
+                 DOCUMENTS
+                 ================================================== -->
+
+            <section
+                class="card"
+                id="documents"
+            >
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Documents
+                        </h2>
+
+                        <p>
+                            Select a document to make it active.
+                        </p>
+
+                    </div>
+
+
+                    {% if uploaded_pdfs %}
+
+                    <form
+                        action="{{ url_for('clear_all') }}"
+                        method="POST"
+                    >
+
+                        <button
+                            type="submit"
+                            class="danger-outline-button"
+                            onclick="return confirm(
+                                'Delete all PDFs, chats and summaries?'
+                            )"
+                        >
+
+                            Clear All
+
+                        </button>
+
+                    </form>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                {% if uploaded_pdfs %}
+
+
+                <div class="document-grid">
+
+
+                    {% for pdf in uploaded_pdfs %}
+
+
+                    <div
+                        class="
+                            document-card
+                            {% if pdf == active_pdf %}
+                            active
+                            {% endif %}
+                        "
+                    >
+
+
+                        <div class="document-card-top">
+
+
+                            <div class="large-pdf-icon">
+                                PDF
+                            </div>
+
+
+                            {% if pdf == active_pdf %}
+
+                            <span class="selected-badge">
+                                Active
+                            </span>
+
+                            {% endif %}
+
+
+                        </div>
+
+
+                        <div class="document-card-name">
+
+                            {{ pdf }}
+
+                        </div>
+
+
+                        <div class="document-card-actions">
+
+
+                            {% if pdf != active_pdf %}
+
+                            <form
+                                action="{{ url_for(
+                                    'select_pdf',
+                                    filename=pdf
+                                ) }}"
+                                method="POST"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="secondary-button"
+                                >
+
+                                    Select
+
+                                </button>
+
+                            </form>
+
+                            {% else %}
+
+                            <button
+                                type="button"
+                                class="active-button"
+                                disabled
+                            >
+
+                                Selected
+
+                            </button>
+
+                            {% endif %}
+
+
+                            <form
+                                action="{{ url_for(
+                                    'delete_pdf',
+                                    filename=pdf
+                                ) }}"
+                                method="POST"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="delete-button"
+                                    onclick="return confirm(
+                                        'Delete this PDF?'
+                                    )"
+                                >
+
+                                    Delete
+
+                                </button>
+
+                            </form>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+                {% else %}
+
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        PDF
+                    </div>
+
+                    <h3>
+                        No documents yet
+                    </h3>
+
+                    <p>
+                        Upload your first PDF to get started.
+                    </p>
+
+                </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+            <!-- ==================================================
+                 ACTIVE PDF + SUMMARY
+                 ================================================== -->
+
+            {% if active_pdf %}
+
+
+            <section class="card">
+
+
+                <div class="active-pdf-header">
+
+
+                    <div>
+
+                        <div class="section-label">
+                            ACTIVE DOCUMENT
+                        </div>
+
+                        <h2>
+                            {{ active_pdf }}
+                        </h2>
+
+                    </div>
+
+
+                    <form
+                        action="{{ url_for('summary') }}"
+                        method="POST"
+                    >
+
+                        <button
+                            type="submit"
+                            class="summary-button"
+                        >
+
+                            Generate Summary
+
+                        </button>
+
+                    </form>
+
+
+                </div>
+
+
+                {% if summary %}
+
+
+                <div class="summary-box">
+
+
+                    <div class="summary-header">
+
+                        <div class="assistant-avatar">
+                            AI
+                        </div>
+
+
+                        <div>
+
+                            <div class="summary-title">
+                                Document Summary
+                            </div>
+
+                            {% if summary_updated_at %}
+
+                            <div class="summary-time">
+                                Updated:
+                                {{ summary_updated_at }}
+                            </div>
+
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="summary-content">
+
+                        {{ summary }}
+
+                    </div>
+
+
+                </div>
+
+
+                {% else %}
+
+
+                <div class="summary-empty">
+
+                    <p>
+                        No summary generated yet.
+                    </p>
+
+                    <span>
+                        Click "Generate Summary" to create
+                        an AI summary of this PDF.
+                    </span>
+
+                </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+            {% endif %}
+
+
+            <!-- ==================================================
+                 CHAT
+                 ================================================== -->
+
+            <section
+                class="card"
+                id="chat"
+            >
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Ask your documents
+                        </h2>
+
+                        <p>
+
+                            {% if active_pdf %}
+
+                                Current document:
+                                <strong>
+                                    {{ active_pdf }}
+                                </strong>
+
+                            {% else %}
+
+                                Upload or select a PDF first.
+
+                            {% endif %}
+
+                        </p>
+
+                    </div>
+
+
+                    {% if active_pdf %}
+
+                        <div class="chat-status">
+                            Ready
+                        </div>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <form
+                    action="{{ url_for('home') }}"
+                    method="POST"
+                    class="question-form"
+                    id="question-form"
+                >
+
+
+                    <textarea
+                        name="question"
+                        class="question-input"
+                        placeholder="Ask anything about your documents..."
+                        rows="3"
+                        required
+                    >{{ question }}</textarea>
+
+
+                    <div class="question-bottom">
+
+
+                        <div class="mode-selector">
+
+                            <label
+                                for="search_mode"
+                            >
+
+                                Search mode
+
+                            </label>
+
+
+                            <select
+                                id="search_mode"
+                                name="search_mode"
+                            >
+
+
+                                <option
+                                    value="current"
+                                    {% if search_mode == "current" %}
+                                    selected
+                                    {% endif %}
+                                >
+
+                                    Current PDF
+
+                                </option>
+
+
+                                <option
+                                    value="all"
+                                    {% if search_mode == "all" %}
+                                    selected
+                                    {% endif %}
+                                >
+
+                                    All PDFs
+
+                                </option>
+
+
+                            </select>
+
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="ask-button"
+                        >
+
+                            Ask AI
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+                <!-- ==================================================
+                     LATEST ANSWER
+                     ================================================== -->
+
+                {% if answer %}
+
+
+                <div class="latest-answer">
+
+
+                    <div class="answer-heading">
+
+                        <div class="assistant-avatar">
+                            AI
+                        </div>
+
+
+                        <div>
+
+                            <div class="answer-title">
+                                Answer
+                            </div>
+
+                            <div class="answer-subtitle">
+                                Generated from retrieved PDF context
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="answer-content">
+
+                        {{ answer }}
+
+                    </div>
+
+
+                    {% if source_pages %}
+
+
+                    <div class="source-section">
+
+
+                        <div class="source-heading">
+                            Sources
+                        </div>
+
+
+                        <div class="source-list">
+
+
+                            {% for source in source_pages %}
+
+
+                            <div class="source-card">
+
+
+                                <div class="source-file">
+                                    PDF
+                                </div>
+
+
+                                <div class="source-info">
+
+                                    <div class="source-name">
+                                        {{ source.filename }}
+                                    </div>
+
+                                    <div class="source-page">
+                                        Page {{ source.page }}
+                                    </div>
+
+                                </div>
+
+
+                                <a
+                                    href="{{ url_for(
+                                        'view_pdf',
+                                        filename=source.filename
+                                    ) }}#page={{ source.page }}"
+                                    target="_blank"
+                                    class="source-open"
+                                >
+
+                                    Open
+
+                                </a>
+
+
+                            </div>
+
+
+                            {% endfor %}
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    {% endif %}
+
+
+                </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+            <!-- ==================================================
+                 HISTORY
+                 ================================================== -->
+
+            <section
+                class="card"
+                id="history"
+            >
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Chat History
+                        </h2>
+
+                        <p>
+                            Saved conversations for this document.
+                        </p>
+
+                    </div>
+
+
+                    {% if chat_history %}
+
+
+                    <form
+                        action="{{ url_for('clear_chat') }}"
+                        method="POST"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="search_mode"
+                            value="{{ search_mode }}"
+                        >
+
+
+                        <button
+                            type="submit"
+                            class="secondary-button"
+                        >
+
+                            Clear History
+
+                        </button>
+
+                    </form>
+
+
+                    {% endif %}
+
+
+                </div>
+
+
+                {% if chat_history %}
+
+
+                <div class="history-list">
+
+
+                    {% for chat in chat_history %}
+
+
+                    <div class="history-item">
+
+
+                        <div class="history-meta">
+
+                            <span>
+                                {{ chat.mode }}
+                            </span>
+
+                            <span>
+                                {{ chat.created_at }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="history-question">
+
+                            <div class="message-label">
+                                You
+                            </div>
+
+                            {{ chat.question }}
+
+                        </div>
+
+
+                        <div class="history-answer">
+
+                            <div class="message-label">
+                                AI
+                            </div>
+
+                            <div class="history-answer-text">
+
+                                {{ chat.answer }}
+
+                            </div>
+
+                        </div>
+
+
+                        {% if chat.sources %}
+
+
+                        <div class="history-source-list">
+
+
+                            {% for source in chat.sources %}
+
+
+                            <a
+                                href="{{ url_for(
+                                    'view_pdf',
+                                    filename=source.filename
+                                ) }}#page={{ source.page }}"
+                                target="_blank"
+                                class="history-source"
+                            >
+
+                                {{ source.filename }}
+                                · Page {{ source.page }}
+
+                            </a>
+
+
+                            {% endfor %}
+
+
+                        </div>
+
+
+                        {% endif %}
+
+
+                    </div>
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+                {% else %}
+
+
+                <div class="empty-state compact">
+
+                    <div class="empty-icon">
+                        CHAT
+                    </div>
+
+                    <h3>
+                        No chat history
+                    </h3>
+
+                    <p>
+                        Ask a question to start a conversation.
+                    </p>
+
+                </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+<script>
+
+const fileInput =
+    document.getElementById("pdf-file");
+
+const selectedFile =
+    document.getElementById("selected-file");
+
+
+if (fileInput) {
+
+    fileInput.addEventListener(
+        "change",
+        function () {
+
+            if (
+                fileInput.files &&
+                fileInput.files.length > 0
+            ) {
+
+                selectedFile.textContent =
+                    "Selected: " +
+                    fileInput.files[0].name;
+
+                selectedFile.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                selectedFile.textContent = "";
+
+                selectedFile.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+const questionForm =
+    document.getElementById("question-form");
+
+
+if (questionForm) {
+
+    questionForm.addEventListener(
+        "submit",
+        function () {
+
+            const button =
+                questionForm.querySelector(
+                    ".ask-button"
+                );
+
+            if (button) {
+
+                button.textContent =
+                    "Thinking...";
+
+                button.disabled = true;
+
+            }
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

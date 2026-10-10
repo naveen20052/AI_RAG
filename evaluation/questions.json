@@ -1,0 +1,365 @@
+[
+  {
+    "id": 1,
+    "question": "What is [FACT FROM PDF 1]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED ANSWER FROM PDF]",
+    "keywords": ["[keyword1]", "[keyword2]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 2,
+    "question": "Who or what is [ENTITY FROM PDF 2]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED ANSWER FROM PDF]",
+    "keywords": ["[entity]", "[keyword]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 3,
+    "question": "When did [EVENT FROM PDF 3] occur?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED DATE OR TIME]",
+    "keywords": ["[event]", "[date]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 4,
+    "question": "Where did [EVENT OR PROCESS FROM PDF 4] take place?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED LOCATION]",
+    "keywords": ["[location]", "[event]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 5,
+    "question": "What are the main components of [TOPIC FROM PDF 5]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED COMPONENTS]",
+    "keywords": ["[component1]", "[component2]", "[component3]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 6,
+    "question": "What value or measurement is given for [METRIC FROM PDF 6]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED NUMBER OR VALUE]",
+    "keywords": ["[metric]", "[number]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 7,
+    "question": "What problem is described in relation to [TOPIC FROM PDF 7]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED PROBLEM]",
+    "keywords": ["[problem]", "[topic]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 8,
+    "question": "What solution or approach is proposed for [PROBLEM FROM PDF 8]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED SOLUTION]",
+    "keywords": ["[solution]", "[approach]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 9,
+    "question": "What conclusion does the document give about [TOPIC FROM PDF 9]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED CONCLUSION]",
+    "keywords": ["[conclusion]", "[topic]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 10,
+    "question": "According to the document, what is the definition of [TERM FROM PDF 10]?",
+    "type": "factual",
+    "expected_answer": "[EXPECTED DEFINITION]",
+    "keywords": ["[term]", "[definition]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+
+  {
+    "id": 11,
+    "question": "Can you explain [CONCEPT FROM PDF 11] using different wording?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED MEANING FROM PDF]",
+    "keywords": ["[concept]", "[related term]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 12,
+    "question": "Why is [CONCEPT FROM PDF 12] important?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED EXPLANATION]",
+    "keywords": ["[concept]", "[importance]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 13,
+    "question": "What does the document mean when it discusses [CONCEPT FROM PDF 13]?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED MEANING]",
+    "keywords": ["[concept]", "[meaning]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 14,
+    "question": "How would you describe [PROCESS FROM PDF 14] in simple terms?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED SIMPLIFIED EXPLANATION]",
+    "keywords": ["[process]", "[related term]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 15,
+    "question": "What is the relationship between [CONCEPT A] and [CONCEPT B] described in the document?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED RELATIONSHIP]",
+    "keywords": ["[concept A]", "[concept B]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 16,
+    "question": "How does [PROCESS A] affect [OUTCOME B] according to the document?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED EFFECT]",
+    "keywords": ["[process A]", "[outcome B]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 17,
+    "question": "What is the document's main explanation for [PHENOMENON FROM PDF 17]?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED EXPLANATION]",
+    "keywords": ["[phenomenon]", "[explanation]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 18,
+    "question": "What are the key factors associated with [TOPIC FROM PDF 18]?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED FACTORS]",
+    "keywords": ["[factor1]", "[factor2]", "[factor3]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 19,
+    "question": "How does the document distinguish [CONCEPT A] from [CONCEPT B]?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED DISTINCTION]",
+    "keywords": ["[concept A]", "[concept B]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 20,
+    "question": "What is the overall message of the section about [TOPIC FROM PDF 20]?",
+    "type": "semantic",
+    "expected_answer": "[EXPECTED MAIN MESSAGE]",
+    "keywords": ["[topic]", "[main message]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+
+  {
+    "id": 21,
+    "question": "What exact term does the document use for [CONCEPT FROM PDF 21]?",
+    "type": "exact_term",
+    "expected_answer": "[EXACT TERM]",
+    "keywords": ["[exact term]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 22,
+    "question": "What exact percentage is reported for [METRIC FROM PDF 22]?",
+    "type": "exact_number",
+    "expected_answer": "[EXACT PERCENTAGE]",
+    "keywords": ["[percentage]", "[metric]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 23,
+    "question": "What year is mentioned for [EVENT FROM PDF 23]?",
+    "type": "exact_number",
+    "expected_answer": "[EXACT YEAR]",
+    "keywords": ["[year]", "[event]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 24,
+    "question": "What is the exact value given for [MEASUREMENT FROM PDF 24]?",
+    "type": "exact_number",
+    "expected_answer": "[EXACT VALUE]",
+    "keywords": ["[measurement]", "[value]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 25,
+    "question": "Which specific method is named for [TASK FROM PDF 25]?",
+    "type": "exact_term",
+    "expected_answer": "[EXACT METHOD NAME]",
+    "keywords": ["[method name]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 26,
+    "question": "What exact number of [ITEM] is reported in the document?",
+    "type": "exact_number",
+    "expected_answer": "[EXACT NUMBER]",
+    "keywords": ["[item]", "[number]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 27,
+    "question": "What is the exact date associated with [EVENT FROM PDF 27]?",
+    "type": "exact_number",
+    "expected_answer": "[EXACT DATE]",
+    "keywords": ["[date]", "[event]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 28,
+    "question": "What abbreviation is used for [TERM FROM PDF 28]?",
+    "type": "exact_term",
+    "expected_answer": "[EXACT ABBREVIATION]",
+    "keywords": ["[abbreviation]", "[term]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 29,
+    "question": "What is the exact range reported for [MEASUREMENT FROM PDF 29]?",
+    "type": "exact_number",
+    "expected_answer": "[EXACT RANGE]",
+    "keywords": ["[range]", "[measurement]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+  {
+    "id": 30,
+    "question": "Which page or section contains the information about [TOPIC FROM PDF 30]?",
+    "type": "exact_term",
+    "expected_answer": "[EXPECTED PAGE OR SECTION]",
+    "keywords": ["[topic]", "[section]"],
+    "answerable": true,
+    "expected_sources": ["[pdf_filename.pdf]"]
+  },
+
+  {
+    "id": 31,
+    "question": "What is the population of Mars according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 32,
+    "question": "Who won the most recent FIFA World Cup according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 33,
+    "question": "What is the current stock price of Apple according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 34,
+    "question": "What will the weather be tomorrow according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 35,
+    "question": "What is the user's personal bank balance according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 36,
+    "question": "What is the exact GDP of every country in the world according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 37,
+    "question": "What will happen in the next ten years according to the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 38,
+    "question": "What is the exact private phone number of the document author?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 39,
+    "question": "What is the real-time location of the person described in the document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": 40,
+    "question": "What is the exact result of an experiment that was never discussed in the uploaded document?",
+    "type": "unanswerable",
+    "expected_answer": null,
+    "keywords": [],
+    "answerable": false,
+    "expected_sources": []
+  }
+]

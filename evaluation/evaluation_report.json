@@ -1,0 +1,61 @@
+{
+  "evaluation_timestamp": "2026-10-07T22:02:48.273204",
+  "total_questions": 40,
+  "successful_questions": 35,
+  "failed_questions": 5,
+  "answerable_questions": 25,
+  "unanswerable_questions": 10,
+  "retrieval_accuracy_percent": 0.0,
+  "answer_accuracy_percent": 28.57,
+  "answerable_accuracy_percent": 0.0,
+  "refusal_accuracy_percent": 100.0,
+  "citation_accuracy_percent": 0.0,
+  "overall_score_percent": 32.14,
+  "metrics_definition": {
+    "retrieval_accuracy": "Percentage of questions where at least one expected source PDF appeared in the final reranked chunks.",
+    "answer_accuracy": "Percentage of questions where the generated answer matched the expected answer or achieved at least 50% keyword coverage, with unanswerable questions counted according to refusal behavior.",
+    "answerable_accuracy": "Answer accuracy calculated only for questions marked answerable=true.",
+    "refusal_accuracy": "Percentage of unanswerable questions for which the assistant correctly refused.",
+    "citation_accuracy": "Percentage of answerable/source-backed questions where the expected PDF source appeared in the final retrieved metadata.",
+    "overall_score": "Mean of retrieval accuracy, answer accuracy, citation accuracy, and refusal accuracy when unanswerable questions are present."
+  },
+  "results_by_question_type": {
+    "exact_number": {
+      "total": 5,
+      "retrieval_accuracy": 0.0,
+      "answer_accuracy": 0.0,
+      "citation_accuracy": 0.0
+    },
+    "exact_term": {
+      "total": 4,
+      "retrieval_accuracy": 0.0,
+      "answer_accuracy": 0.0,
+      "citation_accuracy": 0.0
+    },
+    "factual": {
+      "total": 9,
+      "retrieval_accuracy": 0.0,
+      "answer_accuracy": 0.0,
+      "citation_accuracy": 0.0
+    },
+    "semantic": {
+      "total": 7,
+      "retrieval_accuracy": 0.0,
+      "answer_accuracy": 0.0,
+      "citation_accuracy": 0.0
+    },
+    "unanswerable": {
+      "total": 10,
+      "retrieval_accuracy": 0.0,
+      "answer_accuracy": 100.0,
+      "citation_accuracy": 0.0
+    }
+  },
+  "failed_question_ids": [
+    7,
+    11,
+    15,
+    18,
+    27
+  ]
+}

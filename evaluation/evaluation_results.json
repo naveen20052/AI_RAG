@@ -1,0 +1,1056 @@
+[
+  {
+    "id": 1,
+    "question": "What is [FACT FROM PDF 1]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED ANSWER FROM PDF]",
+    "expected_keywords": [
+      "[keyword1]",
+      "[keyword2]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 2,
+    "question": "Who or what is [ENTITY FROM PDF 2]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED ANSWER FROM PDF]",
+    "expected_keywords": [
+      "[entity]",
+      "[keyword]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "**ChromaDB** is a vector database used in the sample Retrieval‑Augmented Generation (RAG) application. It stores vector representations of text and enables similarity searches to retrieve the document chunks most relevant to a user’s question. This is described in the PDF context: “ChromaDB as the vector database”【PDF: GenAI_RAG_Test_Document.pdf, Page 1】",
+    "refused": false,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 3,
+    "question": "When did [EVENT FROM PDF 3] occur?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED DATE OR TIME]",
+    "expected_keywords": [
+      "[event]",
+      "[date]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 4,
+    "question": "Where did [EVENT OR PROCESS FROM PDF 4] take place?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED LOCATION]",
+    "expected_keywords": [
+      "[location]",
+      "[event]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 5,
+    "question": "What are the main components of [TOPIC FROM PDF 5]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED COMPONENTS]",
+    "expected_keywords": [
+      "[component1]",
+      "[component2]",
+      "[component3]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "The main components of **Retrieval‑Augmented Generation (RAG)**, as described in the PDF, are:\n\n1. **Information Retrieval** – the system searches for relevant document chunks.  \n2. **Embeddings** – a user’s question is converted into an embedding so that semantic similarity can be used for retrieval.  \n3. **Vector Database** – stores the embeddings and allows similarity searches to fetch the most relevant chunks.  \n4. **Language Model** – receives the retrieved context and generates the final answer.\n\nThe sample RAG application in the document uses Sentence Transformers for embeddings, ChromaDB as the vector database, and Groq as the language‑model service. (GenAI_RAG_Test_Document.pdf)",
+    "refused": false,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 6,
+    "question": "What value or measurement is given for [METRIC FROM PDF 6]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED NUMBER OR VALUE]",
+    "expected_keywords": [
+      "[metric]",
+      "[number]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 7,
+    "question": "What problem is described in relation to [TOPIC FROM PDF 7]?",
+    "type": "factual",
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "error_type": "RateLimitError",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m4apb0vvetrafjy8vt71t0jw` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6591, Requested 1606. Please try again in 1.4775s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "success": false
+  },
+  {
+    "id": 8,
+    "question": "What solution or approach is proposed for [PROBLEM FROM PDF 8]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED SOLUTION]",
+    "expected_keywords": [
+      "[solution]",
+      "[approach]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 9,
+    "question": "What conclusion does the document give about [TOPIC FROM PDF 9]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED CONCLUSION]",
+    "expected_keywords": [
+      "[conclusion]",
+      "[topic]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 10,
+    "question": "According to the document, what is the definition of [TERM FROM PDF 10]?",
+    "type": "factual",
+    "answerable": true,
+    "expected_answer": "[EXPECTED DEFINITION]",
+    "expected_keywords": [
+      "[term]",
+      "[definition]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 11,
+    "question": "Can you explain [CONCEPT FROM PDF 11] using different wording?",
+    "type": "semantic",
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "error_type": "RateLimitError",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m4apb0vvetrafjy8vt71t0jw` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6451, Requested 1605. Please try again in 420ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "success": false
+  },
+  {
+    "id": 12,
+    "question": "Why is [CONCEPT FROM PDF 12] important?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED EXPLANATION]",
+    "expected_keywords": [
+      "[concept]",
+      "[importance]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 13,
+    "question": "What does the document mean when it discusses [CONCEPT FROM PDF 13]?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED MEANING]",
+    "expected_keywords": [
+      "[concept]",
+      "[meaning]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 14,
+    "question": "How would you describe [PROCESS FROM PDF 14] in simple terms?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED SIMPLIFIED EXPLANATION]",
+    "expected_keywords": [
+      "[process]",
+      "[related term]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 15,
+    "question": "What is the relationship between [CONCEPT A] and [CONCEPT B] described in the document?",
+    "type": "semantic",
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "error_type": "RateLimitError",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m4apb0vvetrafjy8vt71t0jw` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6471, Requested 1611. Please try again in 615ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "success": false
+  },
+  {
+    "id": 16,
+    "question": "How does [PROCESS A] affect [OUTCOME B] according to the document?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED EFFECT]",
+    "expected_keywords": [
+      "[process A]",
+      "[outcome B]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 17,
+    "question": "What is the document's main explanation for [PHENOMENON FROM PDF 17]?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED EXPLANATION]",
+    "expected_keywords": [
+      "[phenomenon]",
+      "[explanation]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 18,
+    "question": "What are the key factors associated with [TOPIC FROM PDF 18]?",
+    "type": "semantic",
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "error_type": "RateLimitError",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m4apb0vvetrafjy8vt71t0jw` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6457, Requested 1606. Please try again in 472.5ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "success": false
+  },
+  {
+    "id": 19,
+    "question": "How does the document distinguish [CONCEPT A] from [CONCEPT B]?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED DISTINCTION]",
+    "expected_keywords": [
+      "[concept A]",
+      "[concept B]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 20,
+    "question": "What is the overall message of the section about [TOPIC FROM PDF 20]?",
+    "type": "semantic",
+    "answerable": true,
+    "expected_answer": "[EXPECTED MAIN MESSAGE]",
+    "expected_keywords": [
+      "[topic]",
+      "[main message]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 21,
+    "question": "What exact term does the document use for [CONCEPT FROM PDF 21]?",
+    "type": "exact_term",
+    "answerable": true,
+    "expected_answer": "[EXACT TERM]",
+    "expected_keywords": [
+      "[exact term]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 22,
+    "question": "What exact percentage is reported for [METRIC FROM PDF 22]?",
+    "type": "exact_number",
+    "answerable": true,
+    "expected_answer": "[EXACT PERCENTAGE]",
+    "expected_keywords": [
+      "[percentage]",
+      "[metric]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 23,
+    "question": "What year is mentioned for [EVENT FROM PDF 23]?",
+    "type": "exact_number",
+    "answerable": true,
+    "expected_answer": "[EXACT YEAR]",
+    "expected_keywords": [
+      "[year]",
+      "[event]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 24,
+    "question": "What is the exact value given for [MEASUREMENT FROM PDF 24]?",
+    "type": "exact_number",
+    "answerable": true,
+    "expected_answer": "[EXACT VALUE]",
+    "expected_keywords": [
+      "[measurement]",
+      "[value]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 25,
+    "question": "Which specific method is named for [TASK FROM PDF 25]?",
+    "type": "exact_term",
+    "answerable": true,
+    "expected_answer": "[EXACT METHOD NAME]",
+    "expected_keywords": [
+      "[method name]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 26,
+    "question": "What exact number of [ITEM] is reported in the document?",
+    "type": "exact_number",
+    "answerable": true,
+    "expected_answer": "[EXACT NUMBER]",
+    "expected_keywords": [
+      "[item]",
+      "[number]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 27,
+    "question": "What is the exact date associated with [EVENT FROM PDF 27]?",
+    "type": "exact_number",
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "error_type": "RateLimitError",
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m4apb0vvetrafjy8vt71t0jw` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6457, Requested 1605. Please try again in 464.999999ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "success": false
+  },
+  {
+    "id": 28,
+    "question": "What abbreviation is used for [TERM FROM PDF 28]?",
+    "type": "exact_term",
+    "answerable": true,
+    "expected_answer": "[EXACT ABBREVIATION]",
+    "expected_keywords": [
+      "[abbreviation]",
+      "[term]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 29,
+    "question": "What is the exact range reported for [MEASUREMENT FROM PDF 29]?",
+    "type": "exact_number",
+    "answerable": true,
+    "expected_answer": "[EXACT RANGE]",
+    "expected_keywords": [
+      "[range]",
+      "[measurement]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 30,
+    "question": "Which page or section contains the information about [TOPIC FROM PDF 30]?",
+    "type": "exact_term",
+    "answerable": true,
+    "expected_answer": "[EXPECTED PAGE OR SECTION]",
+    "expected_keywords": [
+      "[topic]",
+      "[section]"
+    ],
+    "expected_sources": [
+      "[pdf_filename.pdf]"
+    ],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": 0.0,
+    "retrieval_correct": false,
+    "answer_correct": false,
+    "citation_correct": false,
+    "success": true
+  },
+  {
+    "id": 31,
+    "question": "What is the population of Mars according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 32,
+    "question": "Who won the most recent FIFA World Cup according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 33,
+    "question": "What is the current stock price of Apple according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 34,
+    "question": "What will the weather be tomorrow according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 35,
+    "question": "What is the user's personal bank balance according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 36,
+    "question": "What is the exact GDP of every country in the world according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 37,
+    "question": "What will happen in the next ten years according to the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 38,
+    "question": "What is the exact private phone number of the document author?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 39,
+    "question": "What is the real-time location of the person described in the document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  },
+  {
+    "id": 40,
+    "question": "What is the exact result of an experiment that was never discussed in the uploaded document?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_answer": null,
+    "expected_keywords": [],
+    "expected_sources": [],
+    "retrieved_sources": [
+      "GenAI_RAG_Test_Document.pdf"
+    ],
+    "retrieved_pages": [
+      {
+        "source": "GenAI_RAG_Test_Document.pdf",
+        "page": 1
+      }
+    ],
+    "answer": "I could not find the answer in the uploaded PDFs.",
+    "refused": true,
+    "keyword_coverage": null,
+    "retrieval_correct": null,
+    "answer_correct": true,
+    "citation_correct": null,
+    "success": true
+  }
+]
